@@ -1,0 +1,340 @@
+@import url("reset.css");
+
+@font-face {
+   font-family: 'Roboto';
+   src: url('../fonts/Roboto-Regular.woff2'), format(woff2);
+   font-weight: 400;
+   font-display: swap;
+}
+
+/* global */
+html {
+	height: 100%;
+   font-size: 10px;
+}
+
+body {
+   height: 100%;
+   font-family: 'Roboto', sans-serif;
+   font-weight: 400;
+   font-size: 1.2rem;
+   overflow: hidden;
+}
+
+.wrapper {
+   display: flex;
+   flex-flow: column;
+   min-height: 100%;
+   max-width: 1240px;
+   margin: 0 auto;
+   position: relative;
+}
+
+img {
+   width: 100%;
+   height: 100vh;
+   object-fit: cover;
+   overflow: hidden;
+}
+
+main {
+   flex: 1;
+}
+
+.container {
+   position: absolute;
+   inset: 0;
+   background: rgba(0, 0, 0, 0.5);
+   
+}
+
+.container > div {
+   height: 100vh;
+   max-width: 50rem;
+   margin: 0 0 0 auto;
+   background: rgba(233, 233, 233, 0.25);
+   overflow-y: scroll;
+}
+
+/* --------------------------------------------------------- */
+
+/* form */
+form {
+   width: 34rem;
+   margin: 0 auto;
+   display: flex;
+   flex-flow: column;
+}
+
+/* -------------------------------------------------------- */
+
+/* switch */
+
+.enter-switch {
+   margin-top: 6rem;
+}
+
+.enter-switch input {
+   position: absolute;
+   z-index: -1;
+   opacity: 0;
+}
+
+.enter-switch label {
+   display: inline-block;
+   width: 100%;
+   height: 3.6rem;
+   border-radius: 3rem;
+   border: 1px solid #153416;
+   cursor: pointer;
+   transition: .3s linear;
+   position: relative;
+   margin-bottom: 7.5rem;
+   color: white;
+}
+
+.first {
+   position: absolute;
+   top: 1rem;
+   bottom: 0;
+   left: 20%;
+   z-index:1;
+}
+
+.second {
+   position: absolute;
+   top: 1rem;
+   bottom: 0;
+   right: 14%;
+   z-index:1;
+}
+
+.enter-switch label::before {
+   content: '';
+   position:absolute;
+   top: 1.2px;
+   left: 1.5px;
+   width: 50%;
+   height: 3.2rem;
+   border-radius: 3rem;
+   background:#153416;
+   transition: .3s linear;
+}
+
+.enter-switch input:checked + label::before {
+   transform: translateX(-100%);
+   left: calc(100% - 2px);
+}
+
+/* -------------------------------------------------- */
+
+h1 {
+   font-size: 3rem;
+   color: white;
+   text-align: center;
+   margin-bottom: 3rem;
+}
+
+/* ------------------------------------------------------ */
+
+.email, .pwd, button {
+   height: 4.4rem;
+   border-radius: 3rem;
+   border: 1px solid #929191;
+   cursor: pointer;
+   color:white;
+}
+
+input[type='email'], input[type='password'] {
+   padding: 1.5rem 0 1.5rem 2rem;
+}
+
+input::placeholder {
+   color: white;
+}
+
+.email {
+   margin-bottom: 1.5rem;
+}
+
+.pwd {
+   margin-bottom: 2rem;
+}
+
+input {
+   background: #929191;
+}
+
+input:focus {
+   border-color: red;
+}
+
+input:hover {
+   border-color: #153416;
+}
+
+input[type='email']:focus, input[type='password']:focus  {
+   border-color: red;
+   background:#153416;
+}
+
+/* ---------------------------------- */
+
+/* Кнопка Войти */
+
+button {
+   background:#153416;
+   margin-bottom: 4rem;
+   padding: 1rem;
+   border-color: #153416;
+}
+
+button:focus {
+   background: #929191;
+}
+
+button:hover {
+   border-color: #929191;
+}
+
+/* ------------------------------------------------- */
+
+/* block "Запомнить пароль" */
+
+.box-pwd {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 3rem;
+}
+
+.box-pwd a {
+   color:#153416;
+   padding-top: 1px;
+   transition: .5s ease;
+}
+
+.box-pwd a:hover {
+   color: white;
+}
+
+.remember input {
+   position: absolute;
+   z-index: -1;
+   opacity: 0;
+}
+
+.remember label {
+   display: inline-block;
+   color: white;
+   position: relative;
+   cursor: pointer;
+   padding: 1px 0px 0px 25px;
+}
+
+.remember label::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 15px;
+   height: 15px;
+   border: 1px solid white;
+   border-radius: 2px;
+   transition: .3s ease;
+}
+
+.remember input:checked + label::before {
+   background: #153416;
+   border: 1px solid #153416;
+}
+
+.remember input:checked + label::after {
+   content: '';
+   position: absolute;
+   top: 0px;
+   left: 5px;
+   width: 6px;
+   height: 12px;
+   border-bottom: 1.5px solid white;
+   border-right: 1.5px solid white;
+   transform: rotate(38deg);
+}
+
+.remember label:hover {
+   color:#153416;
+}
+
+.remember input:checked + label {
+   color:#153416;
+}
+
+.remember label:hover::before {
+   border-color:#153416;
+}
+
+.remember input:focus + label {
+   color:#153416;
+}
+
+.remember input:focus + label::before {
+   border-color: #153416;
+   color:#153416;
+}
+
+/* --------------------------------------------- */
+
+/* блок регистрация */
+
+.regist {
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+   color:#153416;
+   margin-bottom: 30px;
+}
+
+.regist a {
+   color: white;
+   transition: .5s ease;
+}
+
+.regist a:hover {
+   color:#153416;
+}
+
+/* -------------------------------------- */
+
+/* блок медиа */
+
+.media {
+   display: flex;
+   flex-flow: column;
+   text-align: center;
+}
+
+.media p {
+   padding-bottom: 2rem;
+   color:#153416;
+}
+
+.media div {
+   display: flex;
+   gap: 20px;
+   justify-content: center;
+}
+
+.media a {
+   text-decoration: none;
+   fill:#153416;
+   transition: .5s ease;
+}
+
+.media a:hover {
+   fill: white;
+}
+
+
+
+
+
+
